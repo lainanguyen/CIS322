@@ -11,3 +11,5 @@ def f(n):
     else:
         return f(n - 1) + f(n - 2)      # Recursive Case
 
+# Memoization: (in Divide and Conquer) it saves the outputs to be re-used, making it much more efficient
+
