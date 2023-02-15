@@ -11,8 +11,10 @@ seed(1)
 array_of_100 = randint(0, 100, 100)
 array_of_1000 = randint(0, 100, 1000)
 array_of_10000 = randint(0, 100, 10000)
+array_of_20000 = randint(0, 100, 20000)
+
+# The array of 100000 takes too long, so I will be using 20000 to showcase the last point
 array_of_100000 = randint(0, 100, 100000)
-array_of_1000000 = randint(0, 100, 1000000)
 
 
 # 1. SELECTION SORT
@@ -53,15 +55,23 @@ end_time = time.time()
 sel_sort_final_time_10000 = end_time - start_time
 print(f"Array of 10000: {sel_sort_final_time_10000}")
 
-# Perform on array of 100000
+# Perform on array of 20000
 start_time = time.time()
-sel_sort(array_of_100000)
+sel_sort(array_of_20000)
 end_time = time.time()
-sel_sort_final_time_100000 = end_time - start_time
-print(f"Array of 100000: {sel_sort_final_time_100000}")
+sel_sort_final_time_20000 = end_time - start_time
+print(f"Array of 20000: {sel_sort_final_time_20000}")
+
+# # Perform on array of 100000
+# start_time = time.time()
+# sel_sort(array_of_100000)
+# end_time = time.time()
+# sel_sort_final_time_100000 = end_time - start_time
+# print(f"Array of 100000: {sel_sort_final_time_100000}")
+#
 
 sel_sort_final_arr = [sel_sort_final_time_100, sel_sort_final_time_1000, sel_sort_final_time_10000,
-                      sel_sort_final_time_100000]
+                      sel_sort_final_time_20000]
 
 
 # 2. BUBBLE SORT
@@ -99,15 +109,22 @@ end_time = time.time()
 bub_sort_final_time_10000 = end_time - start_time
 print(f"Array of 10000: {bub_sort_final_time_10000}")
 
-# Perform on array of 100000
+# Perform on array of 20000
 start_time = time.time()
-bub_sort(array_of_100000)
+bub_sort(array_of_20000)
 end_time = time.time()
-bub_sort_final_time_100000 = end_time - start_time
-print(f"Array of 100000: {bub_sort_final_time_100000}")
+bub_sort_final_time_20000 = end_time - start_time
+print(f"Array of 20000: {bub_sort_final_time_20000}")
+
+# # Perform on array of 100000
+# start_time = time.time()
+# bub_sort(array_of_100000)
+# end_time = time.time()
+# bub_sort_final_time_100000 = end_time - start_time
+# print(f"Array of 100000: {bub_sort_final_time_100000}")
 
 bub_sort_final_arr = [bub_sort_final_time_100, bub_sort_final_time_1000, bub_sort_final_time_10000,
-                      bub_sort_final_time_100000]
+                      bub_sort_final_time_20000]
 
 
 # INSERTION SORT
@@ -146,15 +163,22 @@ end_time = time.time()
 insert_sort_final_time_10000 = end_time - start_time
 print(f"Array of 10000: {insert_sort_final_time_10000}")
 
-# Perform on array of 100000
+# Perform on array of 20000
 start_time = time.time()
-insertion_sort(array_of_100000)
+insertion_sort(array_of_20000)
 end_time = time.time()
-insert_sort_final_time_100000 = end_time - start_time
-print(f"Array of 100000: {insert_sort_final_time_100000}")
+insert_sort_final_time_20000 = end_time - start_time
+print(f"Array of 20000: {insert_sort_final_time_20000}")
+
+# # Perform on array of 100000
+# start_time = time.time()
+# insertion_sort(array_of_100000)
+# end_time = time.time()
+# insert_sort_final_time_100000 = end_time - start_time
+# print(f"Array of 100000: {insert_sort_final_time_100000}")
 
 insert_sort_final_arr = [insert_sort_final_time_100, insert_sort_final_time_1000, insert_sort_final_time_10000,
-                         insert_sort_final_time_100000]
+                         insert_sort_final_time_20000]
 
 
 # LINEAR SEARCH
@@ -188,15 +212,22 @@ end_time = time.time()
 lin_search_final_time_10000 = end_time - start_time
 print(f"Array of 10000: {lin_search_final_time_10000}")
 
-# Perform on array of 100000
+# Perform on array of 20000
 start_time = time.time()
-search(array_of_100000, 1)
+search(array_of_20000, 1)
 end_time = time.time()
-lin_search_final_time_100000 = end_time - start_time
-print(f"Array of 100000: {lin_search_final_time_100000}")
+lin_search_final_time_20000 = end_time - start_time
+print(f"Array of 20000: {lin_search_final_time_20000}")
+
+# # Perform on array of 100000
+# start_time = time.time()
+# search(array_of_100000, 1)
+# end_time = time.time()
+# lin_search_final_time_100000 = end_time - start_time
+# print(f"Array of 100000: {lin_search_final_time_100000}")
 
 lin_search_final_arr = [lin_search_final_time_100, lin_search_final_time_1000, lin_search_final_time_10000,
-                        lin_search_final_time_100000]
+                        lin_search_final_time_20000]
 
 
 # Binary Search
@@ -241,12 +272,19 @@ end_time = time.time()
 bin_search_final_time_10000 = end_time - start_time
 print(f"Array of 10000: {bin_search_final_time_10000}")
 
-# Perform on array of 100000
+# Perform on array of 20000
 start_time = time.time()
-binary_search(array_of_100000, 1)
+binary_search(array_of_20000, 1)
 end_time = time.time()
-bin_search_final_time_100000 = end_time - start_time
-print(f"Array of 100000: {bin_search_final_time_100000}")
+bin_search_final_time_20000 = end_time - start_time
+print(f"Array of 20000: {bin_search_final_time_20000}")
+
+# # Perform on array of 100000
+# start_time = time.time()
+# binary_search(array_of_100000, 1)
+# end_time = time.time()
+# bin_search_final_time_100000 = end_time - start_time
+# print(f"Array of 100000: {bin_search_final_time_100000}")
 
 bin_search_final_arr = [bin_search_final_time_100, bin_search_final_time_1000, bin_search_final_time_10000,
-                        bin_search_final_time_100000]
+                        bin_search_final_time_20000]
