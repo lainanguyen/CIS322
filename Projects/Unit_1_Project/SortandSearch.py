@@ -6,6 +6,7 @@ import time
 # Array of random integer values:
 # Syntax: (Min range, Max range, Size of Array)
 # https://machinelearningmastery.com/how-to-generate-random-numbers-in-python/#:~:text=An%20array%20of%20random%20integers,the%20size%20of%20the%20array.
+
 seed(1)
 array_of_100 = randint(0, 100, 100)
 array_of_1000 = randint(0, 100, 1000)
@@ -13,11 +14,8 @@ array_of_10000 = randint(0, 100, 10000)
 array_of_100000 = randint(0, 100, 100000)
 array_of_1000000 = randint(0, 100, 1000000)
 
-# 3 Sorting Algorithms
 
 # 1. SELECTION SORT
-print("Selection Sort Execution Times: ")
-
 
 def sel_sort(arr):
     for i in range(len(arr)):
@@ -31,6 +29,8 @@ def sel_sort(arr):
         arr[min_elem] = temp
     return arr
 
+
+print("Selection Sort Execution Times: ")
 
 # Perform on array of 100
 start_time = time.time()
@@ -63,9 +63,8 @@ print(f"Array of 100000: {sel_sort_final_time_100000}")
 sel_sort_final_arr = [sel_sort_final_time_100, sel_sort_final_time_1000, sel_sort_final_time_10000,
                       sel_sort_final_time_100000]
 
-# 2. BUBBLE SORT
-print("Bubble Sort Execution Times: ")
 
+# 2. BUBBLE SORT
 
 def bub_sort(arr):
     for i in range(0, len(arr)):
@@ -76,6 +75,8 @@ def bub_sort(arr):
                 arr[j + 1] = temp
     return arr
 
+
+print("Bubble Sort Execution Times: ")
 
 # Perform on array of 100
 start_time = time.time()
@@ -108,9 +109,8 @@ print(f"Array of 100000: {bub_sort_final_time_100000}")
 bub_sort_final_arr = [bub_sort_final_time_100, bub_sort_final_time_1000, bub_sort_final_time_10000,
                       bub_sort_final_time_100000]
 
-# INSERTION SORT
-print("Insertion Sort Execution Times: ")
 
+# INSERTION SORT
 
 def insertion_sort(arr):
     for i in range(1, len(arr)):
@@ -122,6 +122,8 @@ def insertion_sort(arr):
             j -= 1
     return arr
 
+
+print("Insertion Sort Execution Times: ")
 
 # Perform on array of 100
 start_time = time.time()
@@ -154,15 +156,16 @@ print(f"Array of 100000: {insert_sort_final_time_100000}")
 insert_sort_final_arr = [insert_sort_final_time_100, insert_sort_final_time_1000, insert_sort_final_time_10000,
                          insert_sort_final_time_100000]
 
+
 # LINEAR SEARCH
-print("Linear Search Execution Times: ")
 
-
-def search(array_of_100, x):
-    for i in range(0, len(array_of_100)):
-        if array_of_100[i] == x:
+def search(arr, x):
+    for i in range(0, len(arr)):
+        if arr[i] == x:
             return True
 
+
+print("Linear Search Execution Times: ")
 
 # Perform on array of 100
 start_time = time.time()
@@ -195,9 +198,8 @@ print(f"Array of 100000: {lin_search_final_time_100000}")
 lin_search_final_arr = [lin_search_final_time_100, lin_search_final_time_1000, lin_search_final_time_10000,
                         lin_search_final_time_100000]
 
-# Binary Search
-print("Binary Search Execution Times: ")
 
+# Binary Search
 
 def binary_search(arr, elem):
     low = 0
@@ -215,6 +217,8 @@ def binary_search(arr, elem):
                 low = mid + 1
     return Temp
 
+
+print("Binary Search Execution Times: ")
 
 # Perform on array of 100
 start_time = time.time()
