@@ -1,259 +1,434 @@
-import numpy as np
-# https://www.youtube.com/watch?v=hpq9FzSfB7k
-my_array = np.array([20, 14, 25, 16, 45, 60, 12, 9])
+from numpy.random import seed
+from numpy.random import randint
+import time
+
+# Functions from: https://www.youtube.com/watch?v=hpq9FzSfB7k
+# Array of random integer values:
+# Syntax: (Min range, Max range, Size of Array)
+# https://machinelearningmastery.com/how-to-generate-random-numbers-in-python/#:~:text=An%20array%20of%20random%20integers,the%20size%20of%20the%20array.
+seed(1)
+array_of_100 = randint(0, 100, 100)
+array_of_1000 = randint(0, 100, 1000)
+array_of_10000 = randint(0, 100, 10000)
+array_of_100000 = randint(0, 100, 100000)
+array_of_1000000 = randint(0, 100, 1000000)
 
 # 3 Sorting Algorithms
 
-"""
-1. SELECTION SORT
-Time complexity: O(n^2)
-"""
+# 1. SELECTION SORT
+print("Selection Sort Execution Times: ")
+
+# Perform on array of 100
+start_time = time.time()
 
 
-def sel_sort(array):
-    for i in range(len(array)):
+def sel_sort(array_of_100):
+    for i in range(len(array_of_100)):
         min_elem = i
-        for j in range(i + 1, len(array)):
-            if array[j] < array[min_elem]:
+        for j in range(i + 1, len(array_of_100)):
+            if array_of_100[j] < array_of_100[min_elem]:
                 min_elem = j
 
-        temp = array[i]
-        array[i] = array[min_elem]
-        array[min_elem] = temp
-    return array
+        temp = array_of_100[i]
+        array_of_100[i] = array_of_100[min_elem]
+        array_of_100[min_elem] = temp
+    return array_of_100
 
 
-# Test
-# print(sel_sort(my_array))
+end_time = time.time()
+sel_sort_final_time_100 = end_time - start_time
+print(f"Array of 100: {sel_sort_final_time_100}")
+
+# Perform on array of 1000
+start_time = time.time()
 
 
-"""
-2. BUBBLE SORT
+def sel_sort2(array_of_1000):
+    for i in range(len(array_of_1000)):
+        min_elem = i
+        for j in range(i + 1, len(array_of_1000)):
+            if array_of_1000[j] < array_of_1000[min_elem]:
+                min_elem = j
 
-1. Compare the first and second elements
-2. If it is greater than the first, swap
-3. Repeat until end of list
-4. The greatest element is at the last position
-5. Start the process again to sort the remaining elements
-
-Time complexity: O(n^2)
-"""
-
-
-
-def bub_sort(array):
-    for i in range(0, len(array)):
-        for j in range(0, len(array) - i - 1):
-            if array[j] > array[j + 1]:
-                temp = array[j]
-                array[j] = array[j + 1]
-                array[j + 1] = temp
-    return array
+        temp = array_of_1000[i]
+        array_of_1000[i] = array_of_1000[min_elem]
+        array_of_1000[min_elem] = temp
+    return array_of_1000
 
 
-# Test
-# print(bub_sort(my_array))
+end_time = time.time()
+sel_sort_final_time_1000 = end_time - start_time
+print(f"Array of 1000: {sel_sort_final_time_1000}")
+
+# Perform on array of 10000
+start_time = time.time()
 
 
-"""
-INSERTION SORT
+def sel_sort3(array_of_10000):
+    for i in range(len(array_of_10000)):
+        min_elem = i
+        for j in range(i + 1, len(array_of_10000)):
+            if array_of_10000[j] < array_of_10000[min_elem]:
+                min_elem = j
 
-1. Assume first element to be sorted, keep second element as key
-2. Compare key with elements, if element is greater then keep key at front of element
-3. Repeat until the key reaches the end of list, all elements sorted
-
-Time complexity:
-"""
+        temp = array_of_10000[i]
+        array_of_10000[i] = array_of_10000[min_elem]
+        array_of_10000[min_elem] = temp
+    return array_of_10000
 
 
-def insertion_sort(array):
-    for i in range(1, len(array)):
-        key = array[i]
+end_time = time.time()
+sel_sort_final_time_10000 = end_time - start_time
+print(f"Array of 10000: {sel_sort_final_time_10000}")
+
+# Perform on array of 100000
+start_time = time.time()
+
+
+def sel_sort4(array_of_100000):
+    for i in range(len(array_of_100000)):
+        min_elem = i
+        for j in range(i + 1, len(array_of_100000)):
+            if array_of_100000[j] < array_of_100000[min_elem]:
+                min_elem = j
+
+        temp = array_of_100000[i]
+        array_of_100000[i] = array_of_100000[min_elem]
+        array_of_100000[min_elem] = temp
+    return array_of_100000
+
+
+end_time = time.time()
+sel_sort_final_time_100000 = end_time - start_time
+print(f"Array of 100000: {sel_sort_final_time_100000}")
+
+sel_sort_final_times_array = [sel_sort_final_time_100, sel_sort_final_time_1000, sel_sort_final_time_10000,
+                              sel_sort_final_time_100000]
+
+# 2. BUBBLE SORT
+print("Bubble Sort Execution Times: ")
+
+# Perform on array of 100
+start_time = time.time()
+
+
+def bub_sort(array_of_100):
+    for i in range(0, len(array_of_100)):
+        for j in range(0, len(array_of_100) - i - 1):
+            if array_of_100[j] > array_of_100[j + 1]:
+                temp = array_of_100[j]
+                array_of_100[j] = array_of_100[j + 1]
+                array_of_100[j + 1] = temp
+    return array_of_100
+
+
+end_time = time.time()
+bub_sort_final_time_100 = end_time - start_time
+print(f"Array of 100: {bub_sort_final_time_100}")
+
+# Perform on array of 1000
+start_time = time.time()
+
+
+def bub_sort1(array_of_1000):
+    for i in range(0, len(array_of_1000)):
+        for j in range(0, len(array_of_1000) - i - 1):
+            if array_of_1000[j] > array_of_1000[j + 1]:
+                temp = array_of_1000[j]
+                array_of_1000[j] = array_of_1000[j + 1]
+                array_of_1000[j + 1] = temp
+    return array_of_1000
+
+
+end_time = time.time()
+bub_sort_final_time_1000 = end_time - start_time
+print(f"Array of 1000: {bub_sort_final_time_1000}")
+
+# Perform on array of 10000
+start_time = time.time()
+
+
+def bub_sort2(array_of_10000):
+    for i in range(0, len(array_of_10000)):
+        for j in range(0, len(array_of_10000) - i - 1):
+            if array_of_10000[j] > array_of_10000[j + 1]:
+                temp = array_of_10000[j]
+                array_of_10000[j] = array_of_10000[j + 1]
+                array_of_10000[j + 1] = temp
+    return array_of_10000
+
+
+end_time = time.time()
+bub_sort_final_time_10000 = end_time - start_time
+print(f"Array of 10000: {bub_sort_final_time_10000}")
+
+# Perform on array of 100000
+start_time = time.time()
+
+
+def bub_sort3(array_of_100000):
+    for i in range(0, len(array_of_100000)):
+        for j in range(0, len(array_of_100000) - i - 1):
+            if array_of_100000[j] > array_of_100000[j + 1]:
+                temp = array_of_100000[j]
+                array_of_100000[j] = array_of_100000[j + 1]
+                array_of_100000[j + 1] = temp
+    return array_of_100000
+
+
+end_time = time.time()
+bub_sort_final_time_100000 = end_time - start_time
+print(f"Array of 100000: {bub_sort_final_time_100000}")
+
+bub_sort_final_times_array = [bub_sort_final_time_100, bub_sort_final_time_1000, bub_sort_final_time_10000,
+                              bub_sort_final_time_10000]
+
+# INSERTION SORT
+print("Insertion Sort Execution Times: ")
+
+# Perform on array of 100
+start_time = time.time()
+
+
+def insertion_sort(array_of_100):
+    for i in range(1, len(array_of_100)):
+        key = array_of_100[i]
         j = i - 1
-        while j >= 0 and array[j] > key:
-            array[j + 1] = array[j]
-            array[j] = key
+        while j >= 0 and array_of_100[j] > key:
+            array_of_100[j + 1] = array_of_100[j]
+            array_of_100[j] = key
             j -= 1
-    return array
+    return array_of_100
 
 
-# Test
-# print(insertion_sort(my_list))
+end_time = time.time()
+insert_sort_final_time_100 = end_time - start_time
+print(f"Array of 100: {insert_sort_final_time_100}")
+
+# Perform on array of 1000
+start_time = time.time()
 
 
-# Paste into file as functions
+def insertion_sort1(array_of_1000):
+    for i in range(1, len(array_of_1000)):
+        key = array_of_1000[i]
+        j = i - 1
+        while j >= 0 and array_of_1000[j] > key:
+            array_of_1000[j + 1] = array_of_1000[j]
+            array_of_1000[j] = key
+            j -= 1
+    return array_of_1000
 
-# 1 Linear Search function
+
+end_time = time.time()
+insert_sort_final_time_1000 = end_time - start_time
+print(f"Array of 1000: {insert_sort_final_time_1000}")
+
+# Perform on array of 10000
+start_time = time.time()
 
 
-"""
-LINEAR SEARCH
+def insertion_sort2(array_of_10000):
+    for i in range(1, len(array_of_10000)):
+        key = array_of_10000[i]
+        j = i - 1
+        while j >= 0 and array_of_10000[j] > key:
+            array_of_10000[j + 1] = array_of_10000[j]
+            array_of_10000[j] = key
+            j -= 1
+    return array_of_10000
 
-1. Compare each value in list or array
-2. If value is equal to desired value
-3. Element is found
 
-Time complexity: 
-"""
+end_time = time.time()
+insert_sort_final_time_10000 = end_time - start_time
+print(f"Array of 10000: {insert_sort_final_time_10000}")
 
-def search(array, x):
-    for i in range(0, len(array)):
-        if array[i] == x:
+# Perform on array of 100000
+start_time = time.time()
+
+
+def insertion_sort3(array_of_100000):
+    for i in range(1, len(array_of_100000)):
+        key = array_of_100000[i]
+        j = i - 1
+        while j >= 0 and array_of_100000[j] > key:
+            array_of_100000[j + 1] = array_of_100000[j]
+            array_of_100000[j] = key
+            j -= 1
+    return array_of_100000
+
+
+end_time = time.time()
+insert_sort_final_time_100000 = end_time - start_time
+print(f"Array of 100000: {insert_sort_final_time_100000}")
+
+insert_sort_final_times_array = [insert_sort_final_time_100, insert_sort_final_time_1000, insert_sort_final_time_10000,
+                                 insert_sort_final_time_100000]
+
+# LINEAR SEARCH
+print("Linear Search Execution Times: ")
+
+# Perform on array of 100
+start_time = time.time()
+
+
+def search(array_of_100, x):
+    for i in range(0, len(array_of_100)):
+        if array_of_100[i] == x:
             return True
 
 
-# Test
-# print(search(my_list, 9))
+end_time = time.time()
+lin_search_final_time_100 = end_time - start_time
+print(f"Array of 100: {lin_search_final_time_100}")
+
+# Perform on array of 1000
+start_time = time.time()
 
 
-# 1 Binary Search function
-
-"""
-BINARY SEARCH
-
-1. Mark the highest, lowest, and mid positions
-2. Compare the desired value with the mid value
-3. If not found, check in sub arrays
-4. Change the low values according to the sub array
-
-Time complexity: 
-"""
+def search1(array_of_1000, x):
+    for i in range(0, len(array_of_1000)):
+        if array_of_1000[i] == x:
+            return True
 
 
-def binary_search(array, elem):
+end_time = time.time()
+lin_search_final_time_1000 = end_time - start_time
+print(f"Array of 1000: {lin_search_final_time_1000}")
+
+# Perform on array of 10000
+start_time = time.time()
+
+
+def search2(array_of_10000, x):
+    for i in range(0, len(array_of_10000)):
+        if array_of_10000[i] == x:
+            return True
+
+
+end_time = time.time()
+lin_search_final_time_10000 = end_time - start_time
+print(f"Array of 10000: {lin_search_final_time_10000}")
+
+# Perform on array of 100000
+start_time = time.time()
+
+
+def search3(array_of_100000, x):
+    for i in range(0, len(array_of_100000)):
+        if array_of_100000[i] == x:
+            return True
+
+
+end_time = time.time()
+lin_search_final_time_100000 = end_time - start_time
+print(f"Array of 100000: {lin_search_final_time_100000}")
+
+# Binary Search
+print("Binary Search Execution Times: ")
+
+# Perform on array of 100
+start_time = time.time()
+
+lin_search_final_times_array = [lin_search_final_time_100, lin_search_final_time_1000, lin_search_final_time_10000,
+                                lin_search_final_time_100000]
+
+
+def binary_search(array_of_100, elem):
     low = 0
-    high = len(array) - 1
+    high = len(array_of_100) - 1
     Temp = False
 
-    while (low <= high and not Temp):
+    while low <= high and not Temp:
         mid = (low + high) // 2
-        if array[mid] == elem:
+        if array_of_100[mid] == elem:
             Temp = True
         else:
-            if elem < array[mid]:
+            if elem < array_of_100[mid]:
                 high = mid - 1
             else:
                 low = mid + 1
     return Temp
 
 
+end_time = time.time()
+bin_search_final_time_100 = end_time - start_time
+print(f"Array of 100: {bin_search_final_time_100}")
+
+# Perform on array of 1000
+start_time = time.time()
 
 
+def binary_search1(array_of_1000, elem):
+    low = 0
+    high = len(array_of_1000) - 1
+    Temp = False
 
-
-
-"""
-Output:
-a. How long does it take to perform on an array of 100 random integers?
-    - the 3 sorting methods
-    - binary search
-    - linear search
-for this one can use the time built in python fucntion
-
-b. Repeat for arrays of 1 000, 10 000, 100 000, 1 000 000
-
-"""
-
-
-
-
-
-
-
-"""
-QUICK SORT
-
-1. Decide the pivot element either at end or beginning
-2. Start comparing the elements with pivot to create a left and right sub array
-3. Do the same for the sub arrays
-4. Repeat until all the elements have been sorted.
-
-Time complexity: 
-"""
-
-my_list = [20, 14, 25, 16, 45, 60, 12, 9]
-
-
-def quick_sort(a):
-    if len(a) < 2:
-        return a
-
-    pos = 0
-    for i in range(1, len(a)):
-        if a[i] <= a[0]:
-            pos += 1
-            temp = a[i]
-            a[i] = a[pos]
-            a[pos] = temp
-
-    temp = a[0]
-    a[0] = a[pos]
-    a[pos] = temp
-
-    left = quick_sort(a[0:pos])
-    right = quick_sort(a[pos + 1:len(a)])
-
-    sorted_array = left + [a[pos]] + right
-
-    return sorted_array
-
-
-# Test
-# print(quick_sort(my_list))
-
-
-"""
-MERGE SORT
-
-1. Divide and conquer to implement merge sort
-2. Keep dividing until one element is left in the sub arrays
-3. Re-arrange and combine the elements to get the sorted array
-
-Time complexity: 
-"""
-
-my_list2 = [20, 14, 25, 16, 45, 60, 12, 9]
-
-
-def merge_sort(array):
-    if len(array) > 1:
-        left = array[:len(array) // 2]
-        right = array[len(array) // 2:]
-
-        merge_sort(left)
-        merge_sort(right)
-
-        i, j, k = 0, 0, 0
-
-        while i < len(left) and j < len(right):
-            if left[i] <= right[j]:
-                array[k] = left[i]
-                i += 1
+    while low <= high and not Temp:
+        mid = (low + high) // 2
+        if array_of_1000[mid] == elem:
+            Temp = True
+        else:
+            if elem < array_of_1000[mid]:
+                high = mid - 1
             else:
-                array[k] = right[j]
-                j += 1
-            k += 1
-
-        while i < len(left):
-            array[k] = left[i]
-            i += 1
-            k += 1
-
-        while j < len(right):
-            array[k] = right[j]
-            j += 1
-            k += 1
-
-    return array
+                low = mid + 1
+    return Temp
 
 
-# Test
-# print(merge_sort(my_list2))
+end_time = time.time()
+bin_search_final_time_1000 = end_time - start_time
+print(f"Array of 1000: {bin_search_final_time_1000}")
+
+# Perform on array of 10000
+start_time = time.time()
 
 
-# Searching Algorithms
+def binary_search2(array_of_10000, elem):
+    low = 0
+    high = len(array_of_10000) - 1
+    Temp = False
+
+    while low <= high and not Temp:
+        mid = (low + high) // 2
+        if array_of_10000[mid] == elem:
+            Temp = True
+        else:
+            if elem < array_of_10000[mid]:
+                high = mid - 1
+            else:
+                low = mid + 1
+    return Temp
 
 
-# Test
-my_array2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(binary_search(my_array2, 0))
+end_time = time.time()
+bin_search_final_time_10000 = end_time - start_time
+print(f"Array of 10000: {bin_search_final_time_10000}")
+
+# Perform on array of 100000
+start_time = time.time()
+
+
+def binary_search3(array_of_100000, elem):
+    low = 0
+    high = len(array_of_100000) - 1
+    Temp = False
+
+    while low <= high and not Temp:
+        mid = (low + high) // 2
+        if array_of_100000[mid] == elem:
+            Temp = True
+        else:
+            if elem < array_of_100000[mid]:
+                high = mid - 1
+            else:
+                low = mid + 1
+    return Temp
+
+
+end_time = time.time()
+bin_search_final_time_100000 = end_time - start_time
+print(f"Array of 100000: {bin_search_final_time_100000}")
+
+bin_search_final_times_array = [bin_search_final_time_100, bin_search_final_time_1000, bin_search_final_time_10000,
+                                bin_search_final_time_100000]
