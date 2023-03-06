@@ -47,3 +47,50 @@ g3_matrix = [[0, 1, 1, 0],
              [1, 0, 0, 0],
              [1, 0, 0, 1],
              [0, 0, 1, 0]]
+
+mygraph = {
+    'A': ['C'],
+    'B': ['A', 'C'],
+    'C': ['D'],
+    'D': ['C'],
+    'E': ['B', 'C', 'D'],
+    'F': ['E'],
+}
+
+mygraph_matrix = [[0, 0, 1, 0, 0, 0],
+                  [1, 0, 1, 0, 0, 0],
+                  [0, 0, 0, 1, 0, 0],
+                  [0, 0, 1, 0, 0, 0],
+                  [0, 1, 1, 1, 0, 0],
+                  [0, 0, 0, 0, 1, 0],
+                  ]
+
+mygraph2 = {}
+
+
+def edges(g):
+    # Return a list of all edges, each edge ==> (u, v)
+    list_edges = []
+    for node, edges in g.items():
+        for e in edges:
+            list_edges.append((node, e))
+
+    return list_edges
+
+
+def count_edges(g):
+    # Return the edge count (int)
+    pass
+
+
+def count_vertices(g):
+    # Return the vertices count (int)
+    count = 0
+    for key in g:
+        count += 1
+    return count
+
+
+# TESTING FUNCTIONS
+print(count_vertices(mygraph))
+print(count_edges(mygraph))
